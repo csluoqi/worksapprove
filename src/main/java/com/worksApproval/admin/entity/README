@@ -1,0 +1,81 @@
+package com.worksApproval.admin.entity;
+
+import java.util.Date;
+
+public class sdfsf {
+	
+	
+	//审批 就是一对多的三张表.其中多的那端指向1的这端的是候是可以变的,但是只是1对1
+	//还得画一个审批页面,基于稿件信息上传的页面,稿件上传的页面可以尝试使用widze那种
+	
+	站内消息（消息编号，写信人，收信人，时间，标题，内容，状态）
+	稿件（编号，文章标题，文章摘要，作者，所属主题）
+	评审员审核（编号，文章标题，文章摘要，作者，所属主题，评审员，标记，是否推荐）
+	编辑员审核（编号，文章标题，文章摘要，作者，所属主题，评审员，标记，是否录用）
+	文章主题表（编号，主题记号，主题名称，标记）
+	稿件状态（状态编号，状态名称）
+
+	approvalInfo
+	works
+	userInfo
+	status
+	Date createDate;
+	Date lastUpdateDate;
+	
+	
+	
+	siteMessage
+	private Long id;
+	private Date createDate;
+	private status;//已经读了,未读
+	private String content;
+	
+	//worksTheme
+	private Long id;
+	private String name;
+	private comment;
+	private Date createDate;
+	
+	Theme
+	works 
+	private Long id;
+	private String name;
+	private String filepath;
+	private String filesize;
+	private userInfo author;//作者
+	private Date createDate;
+	private worksTheme theme;
+	private Integer status;
+	
+	//private worksStatus
+	进入初审
+	复审
+	终审
+	录用
+	
+	
+
+	
+	//class userInfo
+	private Long id;
+	private String username;
+	private String password;
+	private String realName;
+	private Date birthday;//出生年月日
+	private Integer gender;
+	private String PhoneNumber;
+	private String email;
+	private String address;
+	private String profile;
+	
+	//基础表,在程序里面有静态类
+	//已经知道的 管理员 角色,作者,编辑,初级评审,中级评审,
+	//角色 != 权限(可以访问,不可以访问,可以访问但是不能做其他操作,每次操作都由后台去查询一次其权限) 
+	private UserRole()
+	private Long id;
+	private String shortName;
+	private String comment;
+	
+	
+	
+}
